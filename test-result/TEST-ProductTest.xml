@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.376" errors="0" skipped="0" tests="4" name="ProductTest">
+  <testcase classname="ProductTest" name="categorize" time="0.218">
+      </testcase>
+  <testcase classname="ProductTest" name="createProduct" time="0.009">
+      </testcase>
+  <testcase classname="ProductTest" name="addPrices" time="0.018">
+      </testcase>
+  <testcase classname="ProductTest" name="deleteProduct" time="0.131">
+      </testcase>
+</testsuite>

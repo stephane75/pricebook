@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.119" errors="0" skipped="0" tests="4" name="UserTest">
+  <testcase classname="UserTest" name="createAndRetrieveUser" time="0.009">
+      </testcase>
+  <testcase classname="UserTest" name="tryFindByEmail" time="0.005">
+      </testcase>
+  <testcase classname="UserTest" name="tryCreateUserWithSameEmail" time="0.008">
+      </testcase>
+  <testcase classname="UserTest" name="fullTest" time="0.097">
+      </testcase>
+</testsuite>

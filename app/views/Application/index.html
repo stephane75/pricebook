@@ -1,0 +1,66 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<body>
+    <div class="wrapper">
+        <div id="top">
+            <div id="logo">
+                <img id="logoimage" src="/public/images/logo.png" alt="logo">	<!-- Logo image -->
+                <h1 id="logotitle">liquid gem</h1>	<!-- Logo text -->
+            </div><!--/logo-->
+
+            <nav>	<!-- Navigation Start -->
+                <ul>
+                    <li><a href="/">Liste</a></li>
+                    <li><a href="#about">Ajouter</a></li>
+                </ul>
+            </nav>	<!-- Navigation End -->
+        </div>
+        <!--/top-->
+
+        <hr/>
+        <!-- Horizontal Line -->
+
+        <!-- Search -->
+        <div id='search-box'>
+            <form action='/search' id='search-form' method='get' target='_top'>
+            <input id='search-text' name='q' type='text' ng-model="query"/>
+            <button id='search-button' type='submit'><span>Chercher</span></button>
+            </form>
+        </div>
+        <!-- Search End -->
+
+        <div ng-view></div>
+
+    </div>
+    <footer id="footer">
+        <div class="wrapper">
+            *{<section class="left">}*
+                *{<h4>Contact</h4>}*
+
+                *{<div id="formwrap">}*
+                    *{<form method="post" id="submitform" action="submitemail.php">}*
+                        *{<input type="text" class="formstyle" title="Name" name="name"/>}*
+                        *{<input type="text" class="formstyle" title="Email" name="email"/>}*
+                        *{<textarea name="message" title="Message"></textarea>}*
+                        *{<input class="formstyletwo" type="submit" value="Send">}*
+                    *{</form>}*
+                *{</div>}*
+                *{<div id="error"></div>}*
+            *{</section>}*
+
+            <section class="right social"> <!-- Social Icons Start -->
+                <a href="http://plus.google.co.uk"><img class="icon" src="/public/images/icons/google.png" width="32"
+                                                        height="32" alt="google"></a><!-- Replace with any 32px x 32px icons -->
+                <a href="http://youtube.com"><img class="icon" src="/public/images/icons/youtube.png" width="32" height="32"
+                                                  alt="youtube"></a><!-- Replace with any 32px x 32px icons -->
+                <a href="http://facebook.com"><img class="icon" src="/public/images/icons/facebook.png" width="32"
+                                                   height="32" alt="facebook"></a><!-- Replace with any 32px x 32px icons -->
+                <a href="http://twitter.com"><img class="icon" src="/public/images/icons/twitter.png" width="32" height="32"
+                                                  alt="twitter"></a><!-- Replace with any 32px x 32px icons -->
+            </section>
+            <!-- Social Icons End -->
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+</body>

@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                           Application.index
+
+GET     /partials/add                               Application.add
+GET     /partials/detail                            Application.detail
+GET     /partials/list                              Application.list
+
+GET     /products                                   ProductController.getAll
+GET     /products/{id}                              ProductController.getById
+GET     /products/search/category/{category}        ProductController.searchByCategory
+GET     /products/search/{name}                    	ProductController.searchByName
+
+# Ignore favicon requests
+GET     /favicon.ico                                404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                    staticDir:public
+
+# Catch all
+*       /{controller}/{action}                      {controller}.{action}

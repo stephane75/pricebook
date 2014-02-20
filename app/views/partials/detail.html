@@ -1,0 +1,48 @@
+<section id="work"> <!-- Work Links Section Start -->
+    <div class="item">
+        <a href="#/products/{{product.id}}"><img src="/public/images/work/thumbs/item.png" alt="image 1"></a><!-- Image must be 400px by 300px -->
+        <h3>{{product.name}}</h3><!--Title-->
+        <p>{{product.description}}</p>
+    </div>
+
+    <div class="wrapper">
+        <section class="right">
+            <h4>Ajouter un prix</h4>
+            <div id="formwrap">
+                <form method="post" id="submitform" ng-submit="addPrice()">
+                    <input type="text" id="login" class="formstyle" placeholder="Votre login" ng-model="price.user" name="login" />
+                    <input type="text" class="formstyle" title="Email" placeholder="Votre adresse mail" ng-model="price.email" name="email" />
+                    <input type="text" class="formstyle" title="Price" placeholder="Votre nouveau prix" ng-model="price.value" name="price" />
+                    <input type="hidden" ng-model="price.productId" value="{{product.id}}">
+                    <input class="formstyletwo" type="submit" value="Envoyer">
+                </form>
+            </div>
+            <div id="error"></div>
+        </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div ng-show="product.prices">
+        <table>
+            <thead>
+                <tr>
+                    <th>Boutique</th>
+                    <th>Date de mise à jour</th>
+                    <th>Prix</th>
+                    <th>Par</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="price in product.prices | filter:query | orderBy:name">
+                    <td>{{price.store}}</td>
+                    <td>{{price.date | date: 'dd/MM/yy'}}</td>
+                    <td>{{price.value}} €</td>
+                    <td>{{price.user}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clearfix"></div>
+</section> <!-- Work Links Section End -->

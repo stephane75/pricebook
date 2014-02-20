@@ -1,0 +1,89 @@
+# Test data
+
+User(bob):
+    email:          bob@gmail.com
+    password:       secret
+    login:          Bob
+
+User(jeff):
+    email:          jeff@gmail.com
+    password:       secret
+    login:          Jeff
+
+Category(alimentation):
+    name:           alimentation
+
+Category(hygiene):
+    name:           hygiene
+
+Category(fruit):
+    name:           fruit
+
+Category(legume):
+    name:           legume
+
+Store(leclerc):
+    name:           Leclerc
+    logo:           /logo.png
+    address:        Paris
+
+Store(monoprix):
+    name:           Monoprix
+    logo:           /logo.png
+    address:        Levallois
+
+Product(nutella):
+    name:           Nutella
+    description:    Chocolat à tartiner
+    picture:        /nutella.png
+    categories:
+                    - alimentation
+
+Product(orange):
+    name:           Orange
+    description:    Filet orange
+    picture:        /orange.png
+    categories:
+                    - fruit
+
+Product(pomme):
+    name:           Pomme
+    description:    Pomme golden
+    picture:        /pomme.png
+    categories:
+                    - fruit
+
+Product(prune):
+    name:           Prune
+    description:    Prune du sud
+    picture:        /prune.png
+    categories:
+                    - fruit
+
+Product(carotte):
+    name:           Carotte
+    description:    Carotte bio
+    picture:        /carotte.png
+    categories:
+                    - legume
+
+Product(choux):
+    name:           Choux
+    description:    Choux bio
+    picture:        /choux.png
+    categories:
+                    - legume
+
+Price(nutella1):
+    value:          12f
+    date:           2013-03-01
+    product:        nutella
+    user:           bob
+    store:          leclerc
+
+Price(nutella2):
+    value:          13.0
+    date:           2013-04-01
+    product:        nutella
+    user:           bob
+    store:          leclerc
