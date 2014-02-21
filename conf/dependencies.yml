@@ -2,3 +2,9 @@
 
 require:
     - play
+    - org.codehaus.jackson -> jackson-mapper-asl 1.8.5
+
+repositories:
+    - codehaus:
+        type:           http
+        artifact:       "http://repository.codehaus.org/org/codehaus"

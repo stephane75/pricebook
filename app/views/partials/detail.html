@@ -9,12 +9,15 @@
         <section class="right">
             <h4>Ajouter un prix</h4>
             <div id="formwrap">
-                <form method="post" id="submitform" ng-submit="addPrice()">
+                <form id="submitform">
                     <input type="text" id="login" class="formstyle" placeholder="Votre login" ng-model="price.user" name="login" />
                     <input type="text" class="formstyle" title="Email" placeholder="Votre adresse mail" ng-model="price.email" name="email" />
                     <input type="text" class="formstyle" title="Price" placeholder="Votre nouveau prix" ng-model="price.value" name="price" />
-                    <input type="hidden" ng-model="price.productId" value="{{product.id}}">
-                    <input class="formstyletwo" type="submit" value="Envoyer">
+                    <select ng-model="price.store" ng-options="s.id as s.name for s in stores" name="price.store">
+                        <option value="">Choisir une boutique</option>
+                    </select>
+                    <input type="hidden" ng-model="price.productId" name="price.productId">
+                    <input class="formstyletwo" type="submit" value="Envoyer" ng-click="addPrice()">
                 </form>
             </div>
             <div id="error"></div>

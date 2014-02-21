@@ -1,12 +1,14 @@
-package adapter;
+package utils.adapter;
 
 import bean.PriceBean;
 import bean.ProductBean;
 import bean.ProductDetailBean;
 import models.Price;
 import models.Product;
+import utils.comparator.PriceComparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,9 +45,10 @@ public class ProductAdapter {
         if(product.prices != null){
             List<PriceBean> priceBeans = new ArrayList<PriceBean>();
             for(Price price : product.prices){
-                PriceBean priceBean = new PriceBean(price.value, price.date.getTime(), price.user.login, price.store.name);
+                PriceBean priceBean = new PriceBean(product.id, price.value, price.date.getTime(), price.user.login, price.store.name);
                 priceBeans.add(priceBean);
             }
+            Collections.sort(priceBeans, new PriceComparator());
             productDetailBean.setPrices(priceBeans);
         }
         return productDetailBean;

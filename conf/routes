@@ -13,6 +13,9 @@ GET     /products                                   ProductController.getAll
 GET     /products/{id}                              ProductController.getById
 GET     /products/search/category/{category}        ProductController.searchByCategory
 GET     /products/search/{name}                    	ProductController.searchByName
+POST    /products/{productId}                       ProductController.add
+
+GET     /stores                                     StoreController.getAll
 
 # Ignore favicon requests
 GET     /favicon.ico                                404
