@@ -1,1 +1,26 @@
-add
+<section id="work">
+
+    <div class="item">
+        <img ng-src="{{imageUrl}}"/>
+    </div>
+
+    <div class="wrapper">
+        <section class="right">
+            <div id="formwrap">
+                <form id="submitform">
+                    <input type="file" class="formstyle" ng-file-select="onFileSelect($files)">
+                    *{<button ng-click="upload.abort()">Annuler l'envoi de l'image</button>}*
+
+                    <input type="text" class="formstyle" ng-model="name">
+                    <select ng-model="category" ng-options="c.id as c.name for c in categories">
+                        <option value="">Choisir une catégorie</option>
+                    </select>
+                    <textarea class="formstyle" ng-model="description"></textarea>
+                    <input class="formstyle" type="submit" value="Envoyer" ng-click="addProduct()">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="clearfix"></div>
+</section>

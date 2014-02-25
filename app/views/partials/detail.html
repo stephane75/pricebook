@@ -1,6 +1,6 @@
 <section id="work"> <!-- Work Links Section Start -->
     <div class="item">
-        <a href="#/products/{{product.id}}"><img src="/public/images/work/thumbs/item.png" alt="image 1"></a><!-- Image must be 400px by 300px -->
+        <a href="#/products/{{product.id}}"><img src="{{product.picture}}" alt="image 1"></a><!-- Image must be 400px by 300px -->
         <h3>{{product.name}}</h3><!--Title-->
         <p>{{product.description}}</p>
     </div>
@@ -17,7 +17,7 @@
                         <option value="">Choisir une boutique</option>
                     </select>
                     <input type="hidden" ng-model="price.productId" name="price.productId">
-                    <input class="formstyletwo" type="submit" value="Envoyer" ng-click="addPrice()">
+                    <input class="formstyle" type="submit" value="Envoyer" ng-click="addPrice()">
                 </form>
             </div>
             <div id="error"></div>

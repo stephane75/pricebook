@@ -4,6 +4,7 @@
 
 var priceBookApp = angular.module('priceBookApp', [
     'ngRoute',
+    'angularFileUpload',
     'priceBookControllers',
     'priceBookServices'
 ]);
@@ -14,6 +15,10 @@ priceBookApp.config(['$routeProvider',
             when('/products', {
                 templateUrl: '/partials/list',
                 controller: 'ProductListCtrl'
+            }).
+            when('/products/add', {
+                templateUrl: '/partials/add',
+                controller: 'ProductAddCtrl'
             }).
             when('/products/:productId', {
                 templateUrl: '/partials/detail',

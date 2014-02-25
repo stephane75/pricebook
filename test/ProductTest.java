@@ -57,7 +57,7 @@ public class ProductTest extends UnitTest {
         Category category = Category.findOrCreateByName("legume");
         List<Product> products = Product.findProductByCategory("legume");
         assertEquals(1, products.size());
-        assertEquals(category, products.get(0).categories.iterator().next());
+        assertEquals(category, products.get(0).category);
 
         assertEquals(2, Product.findProductByCategory("fruit").size());
     }

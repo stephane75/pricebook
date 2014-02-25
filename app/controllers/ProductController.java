@@ -1,5 +1,6 @@
 package controllers;
 
+import utils.FileManager;
 import utils.adapter.ProductAdapter;
 import bean.PriceBean;
 import bean.ProductBean;
@@ -14,6 +15,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import play.data.validation.Required;
 import play.mvc.Controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,35 @@ public class ProductController extends Controller {
         renderJSON(formatSearch(products));
     }
 
-    public static void add(Long productId){
+    public static void uploadPicture(File file) {
+        renderJSON(FileManager.saveFile(file, true));
+    }
+
+    public static void addProduct(){
+        params.allSimple();
+        String param = params.data.get("body")[0];
+        ObjectMapper mapper = new ObjectMapper();
+        Product product = null;
+        try {
+            ProductBean productBean = mapper.readValue(param, ProductBean.class);
+            if(productBean != null){
+                product = new Product(productBean.getName(), productBean.getDescription(), productBean.getPicture()).save();
+                product.categorize(productBean.getCategory());
+            }
+        } catch (JsonGenerationException e) {
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            e.printStackTrace();
+        } catch (JsonParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        renderJSON(ProductAdapter.adaptProductToProductDetailBean(product));
+    }
+
+    public static void addPrice(Long productId){
         params.allSimple();
         String param = params.data.get("body")[0];
         ObjectMapper mapper = new ObjectMapper();

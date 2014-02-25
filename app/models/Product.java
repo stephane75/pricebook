@@ -22,15 +22,15 @@ public class Product extends Model {
     @OneToMany(mappedBy="product", cascade= CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Price> prices;
 
-    @ManyToMany(cascade=CascadeType.PERSIST)
-    public Set<Category> categories;
+    @OneToOne
+    @JoinColumn(name="category_fk", nullable=true)
+    public Category category;
 
     public Product(String name, String description, String picture){
         this.name = name;
         this.description = description;
         this.picture = picture;
         this.prices = new ArrayList<Price>();
-        this.categories = new TreeSet<Category>();
     }
 
     public Product addPrice(float value, User user, Store store){
@@ -41,7 +41,8 @@ public class Product extends Model {
     }
 
     public Product categorize(String name){
-        categories.add(Category.findOrCreateByName(name));
+        this.category = Category.findOrCreateByName(name);
+        this.save();
         return this;
     }
 
@@ -54,7 +55,7 @@ public class Product extends Model {
 
     public static List<Product> findProductByCategory(String category) {
         return Product.find(
-                "select distinct p from Product p join p.categories as c where c.name = ?", category
+                "select distinct p from Product p join p.category as c where c.name = ?", category
         ).fetch();
     }
 }

@@ -5,13 +5,21 @@ priceBookServices.factory('Product', ['$resource',
         return $resource('/products/:productId', {}, {
             query: {method: 'GET', isArray: true},
             get: {method: 'GET', params: {productId: 'products'}},
-            add:{method: 'POST', params: {productId: 'productId'}}
+            addPrice:{method: 'POST', params: {productId: 'productId'}},
+            addProduct:{method: 'POST'}
         });
     }]);
 
 priceBookServices.factory('Store', ['$resource',
     function ($resource) {
         return $resource('/stores', {}, {
+            query: {method: 'GET', isArray: true}
+        });
+    }]);
+
+priceBookServices.factory('Category', ['$resource',
+    function ($resource) {
+        return $resource('/categories', {}, {
             query: {method: 'GET', isArray: true}
         });
     }]);

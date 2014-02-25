@@ -13,9 +13,12 @@ GET     /products                                   ProductController.getAll
 GET     /products/{id}                              ProductController.getById
 GET     /products/search/category/{category}        ProductController.searchByCategory
 GET     /products/search/{name}                    	ProductController.searchByName
-POST    /products/{productId}                       ProductController.add
+POST    /products                                   ProductController.addProduct
+POST	/products/uploadPicture                     ProductController.uploadPicture
+POST    /products/{productId}                       ProductController.addPrice
 
 GET     /stores                                     StoreController.getAll
+GET     /categories                                 CategoryController.getAll
 
 # Ignore favicon requests
 GET     /favicon.ico                                404

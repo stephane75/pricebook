@@ -3,13 +3,12 @@ package utils.adapter;
 import bean.PriceBean;
 import bean.ProductBean;
 import bean.ProductDetailBean;
+import models.Category;
 import models.Price;
 import models.Product;
 import utils.comparator.PriceComparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * User: stephane
@@ -23,7 +22,7 @@ public class ProductAdapter {
         productBean.setName(product.name);
         productBean.setDescription(product.description);
         productBean.setPicture(product.picture);
-        productBean.setCategories(product.categories);
+        productBean.setCategory(product.category.name);
 
         if(product.prices != null && product.prices.size() > 0){
             productBean.setUser(product.prices.get(product.prices.size()-1).user.login);
@@ -40,7 +39,7 @@ public class ProductAdapter {
         productDetailBean.setName(product.name);
         productDetailBean.setDescription(product.description);
         productDetailBean.setPicture(product.picture);
-        productDetailBean.setCategories(product.categories);
+        productDetailBean.setCategory(product.category.name);
 
         if(product.prices != null){
             List<PriceBean> priceBeans = new ArrayList<PriceBean>();
@@ -53,4 +52,20 @@ public class ProductAdapter {
         }
         return productDetailBean;
     }
+
+//    private static String adaptCategoriesToStrings(Set<Category> categories){
+//        if(categories != null && categories.size() > 0){
+//            return categories.iterator().next().name;
+//        }else{
+//            return null;
+//        }
+//    }
+//
+//    public static Set<Category> adaptCategory(String category){
+//        Set<Category> categories = new TreeSet<Category>();
+//        Category c = Category.findOrCreateByName(category);
+//        categories.add(c);
+//
+//        return categories;
+//    }
 }

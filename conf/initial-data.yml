@@ -10,17 +10,59 @@ User(jeff):
     password:       secret
     login:          Jeff
 
-Category(alimentation):
-    name:           alimentation
+Category(alimentation_bebe):
+    name:           Alimentation bébé
 
-Category(hygiene):
-    name:           hygiene
+Category(bio):
+    name:           Bio
 
 Category(fruit):
-    name:           fruit
+    name:           Fruits
 
 Category(legume):
-    name:           legume
+    name:           Légumes
+
+Category(boucherie_volaille):
+    name:           Boucherie & Volaille
+
+Category(produits_mer):
+    name:           Produits de la mer
+
+Category(charcuterie_traiteur):
+    name:           Charcuterie & Traiteur
+
+Category(cremerie):
+    name:           Crémerie
+
+Category(yaourt_dessert):
+    name:           Yaourt & Dessert frais
+
+Category(surgeles):
+    name:           Surgelés
+
+Category(epicerie_salee):
+    name:           Epicerie salée
+
+Category(epicerie_sucree):
+    name:           Epicerie sucrée
+
+Category(pain_viennoiserie):
+    name:           Pain & Viennoiserie
+
+Category(boissons):
+    name:           Boissons
+
+Category(vins_spiritueux):
+    name:           Vins & Spiritueux
+
+Category(surgeles):
+    name:           Surgelés
+
+Category(surgeles):
+    name:           Surgelés
+
+Category(surgeles):
+    name:           Surgelés
 
 Store(leclerc):
     name:           Leclerc
@@ -32,58 +74,52 @@ Store(monoprix):
     logo:           /logo.png
     address:        Levallois
 
-Product(nutella):
-    name:           Nutella
-    description:    Chocolat à tartiner
-    picture:        /nutella.png
-    categories:
-                    - alimentation
-
-Product(orange):
-    name:           Orange
-    description:    Filet orange
-    picture:        /orange.png
-    categories:
-                    - fruit
-
-Product(pomme):
-    name:           Pomme
-    description:    Pomme golden
-    picture:        /pomme.png
-    categories:
-                    - fruit
-
-Product(prune):
-    name:           Prune
-    description:    Prune du sud
-    picture:        /prune.png
-    categories:
-                    - fruit
-
-Product(carotte):
-    name:           Carotte
-    description:    Carotte bio
-    picture:        /carotte.png
-    categories:
-                    - legume
-
-Product(choux):
-    name:           Choux
-    description:    Choux bio
-    picture:        /choux.png
-    categories:
-                    - legume
-
-Price(nutella1):
-    value:          12f
-    date:           2013-03-01
-    product:        nutella
-    user:           bob
-    store:          leclerc
-
-Price(nutella2):
-    value:          13.0
-    date:           2013-04-01
-    product:        nutella
-    user:           bob
-    store:          leclerc
+#Product(nutella):
+#    name:           Nutella
+#    description:    Chocolat à tartiner
+#    picture:        /nutella.png
+#    category:       alimentation
+#
+#Product(orange):
+#    name:           Orange
+#    description:    Filet orange
+#    picture:        /orange.png
+#    category:       fruit
+#
+#Product(pomme):
+#    name:           Pomme
+#    description:    Pomme golden
+#    picture:        /pomme.png
+#    category:       fruit
+#
+#Product(prune):
+#    name:           Prune
+#    description:    Prune du sud
+#    picture:        /prune.png
+#    category:       fruit
+#
+#Product(carotte):
+#    name:           Carotte
+#    description:    Carotte bio
+#    picture:        /carotte.png
+#    category:       legume
+#
+#Product(choux):
+#    name:           Choux
+#    description:    Choux bio
+#    picture:        /choux.png
+#    category:       legume
+#
+#Price(nutella1):
+#    value:          12f
+#    date:           2013-03-01
+#    product:        nutella
+#    user:           bob
+#    store:          leclerc
+#
+#Price(nutella2):
+#    value:          13.0
+#    date:           2013-04-01
+#    product:        nutella
+#    user:           bob
+#    store:          leclerc

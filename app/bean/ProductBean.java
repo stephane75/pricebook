@@ -1,13 +1,9 @@
 package bean;
 
-import models.Category;
-import models.Price;
-import models.User;
 import models.Store;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 
 /**
  * User: stephane
@@ -23,10 +19,9 @@ public class ProductBean implements Serializable{
     private Date lastUpdate;
     private String user;
     private Store store;
-    private Set<Category> categories;
+    private String category;
 
     public ProductBean(){
-
     }
 
     public Long getId() {
@@ -77,12 +72,12 @@ public class ProductBean implements Serializable{
         this.store = store;
     }
 
-    public Set<Category> getCategories() {
-        return categories;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategories(Set<Category> categories) {
-        this.categories = categories;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public float getLastPrice() {

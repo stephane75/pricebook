@@ -1,8 +1,8 @@
-17 févr. 2014 14:21:40,182 INFO  ~ Starting /home/stephane/Dev/perso/pricebook
-17 févr. 2014 14:21:40,698 WARN  ~ You're running Play! in DEV mode
-17 févr. 2014 14:21:40,774 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-17 févr. 2014 14:21:43,649 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
-17 févr. 2014 14:21:44,446 INFO  ~ Application 'pricebook' is now started !
-17 févr. 2014 14:23:22,519 WARN  ~ SQL Error: 23505, SQLState: 23505
-17 févr. 2014 14:23:22,519 ERROR ~ Unique index or primary key violation: "CONSTRAINT_INDEX_2 ON PUBLIC.USER(EMAIL)"; SQL statement:
+24 févr. 2014 17:54:44,134 INFO  ~ Starting /home/stephane/Dev/perso/pricebook
+24 févr. 2014 17:54:44,639 WARN  ~ You're running Play! in DEV mode
+24 févr. 2014 17:54:44,730 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+24 févr. 2014 17:54:49,220 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+24 févr. 2014 17:54:49,881 INFO  ~ Application 'pricebook' is now started !
+24 févr. 2014 17:54:53,805 WARN  ~ SQL Error: 23505, SQLState: 23505
+24 févr. 2014 17:54:53,806 ERROR ~ Unique index or primary key violation: "CONSTRAINT_INDEX_2 ON PUBLIC.USER(EMAIL)"; SQL statement:
 insert into User (id, creationDate, email, login, password) values (null, ?, ?, ?, ?) [23505-166]
